@@ -7,6 +7,7 @@ module Gollum
     VALID_PAGE_RE = /^(.+)\.(md|mkdn?|mdown|markdown|textile|rdoc|org|creole|re?st(\.txt)?|asciidoc|pod|(media)?wiki)$/i
     FORMAT_NAMES = { :markdown  => "Markdown",
                      :textile   => "Textile",
+                     :fml       => "FAQML",
                      :rdoc      => "RDoc",
                      :org       => "Org-mode",
                      :creole    => "Creole",
@@ -52,13 +53,15 @@ module Gollum
     #
     # Returns the Symbol format of the page. One of:
     #   [ :markdown | :textile | :rdoc | :org | :rest | :asciidoc | :pod |
-    #     :roff ]
+    #     :roff | :fml]
     def self.format_for(filename)
       case filename.to_s
         when /\.(md|mkdn?|mdown|markdown)$/i
           :markdown
         when /\.(textile)$/i
           :textile
+        when /\.(fml)$/i
+          :fml
         when /\.(rdoc)$/i
           :rdoc
         when /\.(org)$/i
@@ -340,6 +343,7 @@ module Gollum
       case format
         when :markdown  then 'md'
         when :textile   then 'textile'
+        when :fml       then 'fml'
         when :rdoc      then 'rdoc'
         when :org       then 'org'
         when :creole    then 'creole'

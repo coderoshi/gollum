@@ -44,6 +44,7 @@ to install the dependencies for the formats that you plan to use.
 * [ReStructuredText](http://docutils.sourceforge.net/rst.html) -- `easy_install docutils`
 * [Textile](http://www.textism.com/tools/textile/) -- `gem install RedCloth`
 * [MediaWiki](http://www.mediawiki.org/wiki/Help:Formatting) -- `gem install wikicloth`
+* FML
 
 [bundler]: http://gembundler.com/
 
@@ -85,6 +86,7 @@ current list of formats and allowed extensions is:
 * RDoc: .rdoc
 * ReStructuredText: .rest.txt, .rst.txt, .rest, .rst
 * Textile: .textile
+* FAQML: .fml
 * MediaWiki: .mediawiki, .wiki
 
 Gollum detects the page file format via the extension, so files must have one
